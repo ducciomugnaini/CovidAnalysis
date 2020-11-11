@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QLTkBvNAKOIx05bZwLNNEpTqnIJCL9iQfUZG/MiSBh0SWfdJXZLNmY0c0qGSz6a6m/yNw6FQwmVRESopXiVd4A==",
+  "success": true,
+  "projectFilePath": "C:\\Develop\\NET\\Lab\\CovidAnalysis\\WebApiCovidItalia\\WebApiCovidItalia\\WebApiCovidItalia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\duccio.mugnaini\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
