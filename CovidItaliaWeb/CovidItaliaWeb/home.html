@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<title>Covid Italia Web</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+	<script src="Scripts/utils.js"></script>
+	<script src="Scripts/program.js"></script>
+
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="width:75%;">
+		<canvas id="chart1"></canvas>
+	</div>
+
+	<script>
+
+		$(document).ready(function () {
+			drawChart();
+		});
+
+	</script>
+
+</body>
+
+</html>
