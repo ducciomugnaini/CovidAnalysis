@@ -11,27 +11,13 @@ Thumbs.db
 # C# Generic Web Project #
 ##########################
 Output-Build.txt
-*/obj/
-*/bin/
+obj/
+bin/
 *.v11.suo
 .vs/
 *.pubxml.user
 Backup/
 packages/
-
-# ReSharper #
-#############
-*.DotSettings.user
-
-# Pcube Project #
-#################
-Pcube/Web.config
-Pcube/Glimpse.log
-Pcube/SqlServerTypes/
-Pcube/App_Data/Logs/
-Pcube/App_Data/Store/
-Pcube/App_Data/Layout/
-Pcube/App_Data/Reports/
 *.csproj.user
 *.psess
 *.vsp
@@ -40,14 +26,6 @@ Pcube/App_Data/Reports/
 *.rdl
 .idea/
 
-# .css Files #
-#################
-custom-kendo.css
-style.css
-mixin.css
-wiki.css
-pivot-fl.css
-core.css
-swiper.css
-functions.css
-UpgradeLog.htm
+# ReSharper #
+#############
+*.DotSettings.user
