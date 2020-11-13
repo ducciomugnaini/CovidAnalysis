@@ -1,38 +1,38 @@
-function drawChart() {
+function drawChartPositivi() {
     $.ajax("https://localhost:44355/covid")
         .done(function (jsondata) {
-            var lbl = jsondata.map(function (jd) {
+            var dsLabels = jsondata.map(function (jd) {
                 return jd.data;
             });
 
-            var nuoviPositivi = jsondata.map(function (jd) {
+            var dsNuoviPositivi = jsondata.map(function (jd) {
                 return jd.nuovi_positivi;
             });
 
-            var varPositivi = jsondata.map(function (jd) {
+            var dsVarPositivi = jsondata.map(function (jd) {
                 return jd.variazione_totale_positivi;
             });
 
-            var totalePositivi = jsondata.map(function (jd) {
+            var dsTotalePositivi = jsondata.map(function (jd) {
                 return jd.totale_positivi;
             });
 
-            new Chart($('#chart1'), {
+            new Chart($('#chartPositivi'), {
                 type: 'line',
                 data: {
-                    labels: lbl,
+                    labels: dsLabels,
                     datasets: [{
                         label: 'Nuovi positivi',
                         fill: false,
                         backgroundColor: window.chartColors.red,
                         borderColor: window.chartColors.red,
-                        data: nuoviPositivi
+                        data: dsNuoviPositivi
                     }, {
                         label: 'Variazione positivi',
                         fill: false,
                         backgroundColor: window.chartColors.orange,
                         borderColor: window.chartColors.orange,
-                        data: varPositivi
+                        data: dsVarPositivi
                     }]
                 },
                 options: {
