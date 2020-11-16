@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealtimeCompiler", "Realtim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysisWeb", "DataAnalysisWeb\DataAnalysisWeb.csproj", "{62B6C222-52DF-40DE-A35D-123667F731B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeComplilerNUTest", "RealTimeComplilerNUTest\RealTimeComplilerNUTest.csproj", "{9FC282FB-5609-4DD6-AD60-B358388BE84A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{62B6C222-52DF-40DE-A35D-123667F731B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B6C222-52DF-40DE-A35D-123667F731B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B6C222-52DF-40DE-A35D-123667F731B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC282FB-5609-4DD6-AD60-B358388BE84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC282FB-5609-4DD6-AD60-B358388BE84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC282FB-5609-4DD6-AD60-B358388BE84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC282FB-5609-4DD6-AD60-B358388BE84A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
