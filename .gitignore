@@ -13,6 +13,7 @@ Thumbs.db
 Output-Build.txt
 obj/
 bin/
+App_Data/
 *.v11.suo
 .vs/
 *.pubxml.user

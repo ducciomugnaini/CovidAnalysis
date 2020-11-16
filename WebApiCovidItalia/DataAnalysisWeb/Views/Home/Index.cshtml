@@ -4,5 +4,16 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>With this application you can process any .csv file and model the output data dynamically.</p>
+</div>
+<div class="text-left">
+    <h4>Start by uploading a .csv file</h4>
+    <form class="col-xs-12" method="post" action="/upload/UploadFiles" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" class="form-control" name="csvFile" style="height: auto;"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary col-xs-12">Add</button>
+        </div>
+    </form>
 </div>
