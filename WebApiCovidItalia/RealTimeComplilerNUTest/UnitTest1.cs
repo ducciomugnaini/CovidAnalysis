@@ -13,10 +13,37 @@ namespace RealTimeComplilerNUTest
         [Test]
         public void Test1()
         {
-            string json = @"{
-                myCPU: 'AMD Radeon',
-                myDrives: ['A', 'B']
-                }";
+            string json =
+                @"{'data': [
+                    {
+                        'col_1': 123,
+                        'col_2': 234,
+                        'col_3': 345,
+                        'col_4': 456,
+                        'col_5': 567,
+                        'col_6': 'asd'
+                    },
+                    {
+                        'col_1': 111,
+                        'col_2': 222,
+                        'col_3': 333,
+                        'col_4': 444,
+                        'col_5': 555,
+                        'col_6': 'qwe'
+                    },
+                    {
+                        'col_1': 666,
+                        'col_2': 777,
+                        'col_3': 888,
+                        'col_4': 999,
+                        'col_5': 111,
+                        'col_6': 'zxc'
+                    }
+                   ]}";
+
+            // JSON -> Object
+            // https://www.newtonsoft.com/json/help/html/DeserializeObject.htm
+            // https://www.newtonsoft.com/json/help/html/DeserializeCollection.htm
 
             JObject jsonInput = JObject.Parse(json);
 
