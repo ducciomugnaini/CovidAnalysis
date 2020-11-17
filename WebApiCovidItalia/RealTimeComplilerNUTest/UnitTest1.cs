@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 
 namespace RealTimeComplilerNUTest
@@ -12,8 +13,14 @@ namespace RealTimeComplilerNUTest
         [Test]
         public void Test1()
         {
+            string json = @"{
+                myCPU: 'AMD Radeon',
+                myDrives: ['A', 'B']
+                }";
 
-            _ = RealtimeCompiler.RealtimeCompiler.Run("Implementation");
+            JObject jsonInput = JObject.Parse(json);
+
+            var jsonResult = RealtimeCompiler.RealtimeCompiler.Run(jsonInput);
 
             Assert.Pass();
         }
