@@ -12,14 +12,14 @@ namespace DynamicProgram
         private class InputDataStructure
         {
             {{ for field in input_fields }}
-            public {{ field.fieldName }} {{ field.fieldType }} { get; set; }
+            public {{ field.fieldType }} {{ field.fieldName }} { get; set; }
             {{ end }}
         }
 
         private class OutputDataStructure
         {
             {{ for field in output_fields }}
-            public {{ field.fieldName }} {{ field.fieldType }} { get; set; }
+            public {{ field.fieldType }} {{ field.fieldName }} { get; set; }
             {{ end }}
         }
 

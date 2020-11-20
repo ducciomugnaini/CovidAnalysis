@@ -26,9 +26,9 @@ namespace DynamicRun.Builder
             public string out_2 { get; set; }
         }
 
-        public JObject Execute(byte[] compiledAssembly, JObject json)
+        public JObject Execute(string classNameWithNameSpace, byte[] compiledAssembly, JObject json)
         {
-            var tupleResult = LoadAndExecute(compiledAssembly, json);
+            var tupleResult = LoadAndExecute(classNameWithNameSpace, compiledAssembly, json);
 
             Unload(tupleResult.Item1);
             
@@ -36,14 +36,14 @@ namespace DynamicRun.Builder
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static Tuple<WeakReference, JObject> LoadAndExecute(byte[] compiledAssembly, JObject json)
+        private static Tuple<WeakReference, JObject> LoadAndExecute(string classNameWithNameSpace, byte[] compiledAssembly, JObject json)
         {
             using (var asm = new MemoryStream(compiledAssembly))
             {
                 var assemblyLoadContext = new SimpleUnloadableAssemblyLoadContext();
                 var assembly = assemblyLoadContext.LoadFromStream(asm);
 
-                IRunnable p = (IRunnable) assembly.CreateInstance("DynamicProgram.DynamicManipulation");
+                IRunnable p = (IRunnable) assembly.CreateInstance(classNameWithNameSpace);
                 JObject jsonResult = null;
 
                 // ---------------------------------------------------------------------------------------
