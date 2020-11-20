@@ -134,8 +134,8 @@ namespace RealtimeCompiler
         }
     }
 
-
-    public class DynamicScribanTemplate : IRunnable
+    // output from scriban template render
+    /*public class DynamicScribanTemplate : IRunnable
     {
 
         private class InputDataStructure
@@ -181,5 +181,5 @@ namespace RealtimeCompiler
 
             return outputJObject;
         }
-    }
+    }*/
 }
