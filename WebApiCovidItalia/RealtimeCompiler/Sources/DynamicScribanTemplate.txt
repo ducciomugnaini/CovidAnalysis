@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RealtimeCompiler.Interfaces;
+
+namespace DynamicProgram
+{
+    public class DynamicScribanTemplate : IRunnable
+    {
+                
+        private class InputDataStructure
+        {
+            {{ for field in input_fields }}
+            public {{ field.fieldName }} {{ field.fieldType }} { get; set; }
+            {{ end }}
+        }
+
+        private class OutputDataStructure
+        {
+            {{ for field in output_fields }}
+            public {{ field.fieldName }} {{ field.fieldType }} { get; set; }
+            {{ end }}
+        }
+
+        public JObject Elaborate(JObject data)
+        {            
+            JArray dataJArray = (JArray)data["data"];
+            IList<InputDataStructure> inputList = dataJArray.ToObject<IList<InputDataStructure>>();
+
+            List<OutputDataStructure> outputList = new List<OutputDataStructure>();
+
+            foreach (var _ in inputList)
+            {
+                var output = new OutputDataStructure();
+                {{ for field in output_fields }}
+                output.{{ field.fieldName }} = {{ field.fieldElab }};
+                {{ end }}
+                outputList.Add(output);
+            }
+
+            // List => Json
+            // https://www.newtonsoft.com/json/help/html/SerializingCollections.htm
+
+            string outputJson = JsonConvert.SerializeObject(outputList, Formatting.Indented);
+            JArray jsonArray = JArray.Parse(outputJson);
+
+            var outputJObject = new JObject();
+            outputJObject.Add("elaboratedData", jsonArray);
+
+            return outputJObject;
+        }
+    }
+}

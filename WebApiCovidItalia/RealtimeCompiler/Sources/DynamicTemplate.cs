@@ -82,12 +82,18 @@ namespace DynamicProgram
 
             foreach (var _ in inputList)
             {
-                outputList.Add(new OutputDataStructure
+                var output = new OutputDataStructure();
+                output.out_1 = OutputDataStructure.compute_out_1(_);   // <= !! from config
+                output.out_2 = _.col_6;                                // <= !! from config
+                output.out_3 = _.col_4 * _.col_1;                       // <= !! from config
+                outputList.Add(output);
+
+                /*outputList.Add(new OutputDataStructure
                 {
                     out_1 = OutputDataStructure.compute_out_1(_),   // <= !! from config
                     out_2 = _.col_6,                                // <= !! from config
                     out_3 = _.col_4 * _.col_1                       // <= !! from config
-                });
+                });*/
             }
 
             // List => Json

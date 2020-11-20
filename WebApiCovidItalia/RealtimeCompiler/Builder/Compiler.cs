@@ -10,12 +10,15 @@ namespace DynamicRun.Builder
 {
     internal class Compiler
     {
-        public byte[] Compile(string filepath)
+        public byte[] CompileFile(string filepath)
         {
             Console.WriteLine($"Starting compilation of: '{filepath}'");
-
             var sourceCode = File.ReadAllText(filepath);
+            return CompileSource(sourceCode);
+        }
 
+        public byte[] CompileSource(string sourceCode)
+        {
             using (var peStream = new MemoryStream())
             {
                 var result = GenerateCode(sourceCode).Emit(peStream);

@@ -51,5 +51,13 @@ namespace RealTimeComplilerNUTest
 
             Assert.Pass();
         }
+
+        [Test]
+        public void TestTemplate()
+        {
+
+            var jsonResult = RealtimeCompiler.RealtimeCompiler.RunWithTemplate(null, null);
+            Assert.Pass();
+        }
     }
 }
