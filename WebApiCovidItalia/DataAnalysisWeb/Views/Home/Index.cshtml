@@ -8,10 +8,26 @@
 </div>
 <div class="text-left">
     <h4>Start by uploading a .csv file</h4>
-    <form class="col-xs-12" method="post" action="/upload/UploadFiles" enctype="multipart/form-data">
+
+    <form class="col-xs-12" method="post" action="/file/UploadFiles" enctype="multipart/form-data">
+
         <div class="form-group">
             <input type="file" class="form-control" name="csvFile" style="height: auto;"/>
         </div>
+
+        <div class="form-group">
+            <p>Indicate csv delimiter:</p>
+            <input type="radio" id="comma" name="delimiter" value=",">
+            <label for="comma">Comma (,)</label><br>
+            <input type="radio" id="semicolon" name="delimiter" value=";">
+            <label for="semicolon">Semicolon (;)</label><br>
+            <input type="radio" id="colon" name="delimiter" value=":">
+            <label for="colon">Colon (:)</label><br>
+            <input type="radio" id="other" name="delimiter" value="?">
+            <label for="other">Other:</label>
+            <input type="text" class="form-control" name="otherDelimiter" style="width: 50px; display: inline;"/>
+        </div>
+
         <div class="form-group">
             <button type="submit" class="btn btn-primary col-xs-12">Add</button>
         </div>

@@ -19,6 +19,11 @@ namespace DataAnalysisWeb.Controllers
             return View();
         }
 
+        public IActionResult Configurator()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
