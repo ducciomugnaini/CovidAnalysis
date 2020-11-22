@@ -25,10 +25,11 @@ namespace DataAnalysisWeb
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
             });
-
-            services.AddTransient<IRunnable, RealtimeCompiler.RealTimeCompilerDI>();
-
+            
             services.AddControllersWithViews();
+
+            // Configurazione della DI nativa di net core
+            services.AddTransient<IRunnable, RealtimeCompiler.RealTimeCompilerDI>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

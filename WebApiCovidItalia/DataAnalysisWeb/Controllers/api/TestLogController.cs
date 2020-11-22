@@ -40,20 +40,19 @@ namespace DataAnalysisWeb.Controllers.api
         private readonly ILogger<HomeController> _logger;
         private readonly IRunnable _runnable;        
 
+        // Qui si utilizza la DI nativa di net core
         public TestLogController(IRunnable runnable, ILogger<HomeController> logger)
         {
             _logger = logger;
             _logger.LogDebug(1, "NLog injected into HomeController");
 
             _runnable = runnable;
-
         }
 
         [HttpGet]
         public IEnumerable<CovidItem> Get()
         {
             _logger.LogInformation("Hello, this is the TestLogController!");
-
             _runnable.Elaborate(null);
 
             using (WebClient webClient = new WebClient())
