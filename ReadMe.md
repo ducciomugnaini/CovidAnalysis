@@ -16,7 +16,11 @@
 
 [NLog](https://nlog-project.org/)  
 [NLog Setup](https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-3)  
-[NLogConfig](https://nlog-project.org/config/)  
+[NLog Config](https://nlog-project.org/config/)
+
+[NLog with Sentry](https://github.com/getsentry/sentry-dotnet)  
+[NLog with Sentry](https://github.com/getsentry/sentry-dotnet/tree/main/samples/Sentry.Samples.NLog)  
+[NLog with Sentry](https://docs.sentry.io/platforms/dotnet/guides/aspnetcore/)
 
 # Utilities
 
