@@ -5,6 +5,8 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
+using RealtimeCompiler;
+using RealtimeCompiler.Interfaces;
 
 namespace DataAnalysisWeb.Controllers.api
 {
@@ -36,17 +38,23 @@ namespace DataAnalysisWeb.Controllers.api
     public class TestLogController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IRunnable _runnable;        
 
-        public TestLogController(ILogger<HomeController> logger)
+        public TestLogController(IRunnable runnable, ILogger<HomeController> logger)
         {
             _logger = logger;
             _logger.LogDebug(1, "NLog injected into HomeController");
+
+            _runnable = runnable;
+
         }
 
         [HttpGet]
         public IEnumerable<CovidItem> Get()
         {
             _logger.LogInformation("Hello, this is the TestLogController!");
+
+            _runnable.Elaborate(null);
 
             using (WebClient webClient = new WebClient())
             {

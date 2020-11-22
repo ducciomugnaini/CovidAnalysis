@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RealtimeCompiler.Interfaces;
 
 namespace DataAnalysisWeb
 {
@@ -23,7 +24,9 @@ namespace DataAnalysisWeb
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            });            
+            });
+
+            services.AddTransient<IRunnable, RealtimeCompiler.RealTimeCompilerDI>();
 
             services.AddControllersWithViews();
         }
